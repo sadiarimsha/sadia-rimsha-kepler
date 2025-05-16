@@ -1,3 +1,5 @@
+/* ========== Desktop Styles ========== */
+
 body {
   background-color: #f0f0f0;
   color: #333;
@@ -62,4 +64,42 @@ section {
 
 .connect a:hover {
   text-decoration: underline;
+}
+/* ========== Tablet Styles ========== */
+
+@media (max-width: 1024px) {
+  #name {
+    font-size: 25px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+  }
+  section {
+    padding: 18px;
+    margin: 18px;
+    background-color: #fafafa;
+  }
+  h1 {
+    font-size: 32px;
+    color: red;
+  }
+}
+
+/* ========== Mobile Styles ========== */
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 24px;
+    color: darkgreen;
+    text-align: left;
+  }
+  section {
+    padding: 12px;
+    margin: 12px;
+    background-color: #fff;
+  }
+  #name {
+    font-size: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
 }
