@@ -102,4 +102,11 @@ section {
     text-align: center;
     font-family: Arial, sans-serif;
   }
+   #connect a {
+    color: darkgreen;
+    text-decoration: none; 
+   }
+  #connect a:hover {
+    text-decoration: underline;
+  }
 }
