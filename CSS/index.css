@@ -1,0 +1,65 @@
+body {
+  background-color: #f0f0f0;
+  color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: darkblue;
+  text-align: center;
+}
+
+#name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  border: 2px dashed;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.experience-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  flex-wrap: wrap;
+}
+
+.experience-description {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.connect {
+  display: flex;
+  gap: 15px;
+}
+
+.connect a {
+  color: darkgreen;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.connect a:hover {
+  text-decoration: underline;
+}
