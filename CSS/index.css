@@ -51,18 +51,18 @@ section {
   margin-top: 5px;
 }
 
-.connect {
+#connect {
   display: flex;
   gap: 15px;
 }
 
-.connect a {
+#connect a {
   color: darkgreen;
   text-decoration: none;
   font-weight: bold;
 }
 
-.connect a:hover {
+#connect a:hover {
   text-decoration: underline;
 }
 /* ========== Tablet Styles ========== */
