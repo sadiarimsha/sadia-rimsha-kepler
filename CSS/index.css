@@ -1,11 +1,31 @@
 /* ========== Desktop Styles ========== */
-
 body {
   background-color: #f0f0f0;
   color: #333;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  background-color: #fff;
+  padding: 15px;
+}
+
+nav a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 h1 {
@@ -53,20 +73,26 @@ section {
 
 #connect {
   display: flex;
+  flex-direction: column;
   gap: 15px;
 }
 
-#connect a {
+.connection-links {
+  display: flex;
+  gap: 15px;
+}
+
+.connection-links a {
   color: darkgreen;
   text-decoration: none;
   font-weight: bold;
 }
 
-#connect a:hover {
+.connection-links a:hover {
   text-decoration: underline;
 }
-/* ========== Tablet Styles ========== */
 
+/* ========== Tablet Styles ========== */
 @media (max-width: 1024px) {
   #name {
     font-size: 25px;
@@ -85,7 +111,6 @@ section {
 }
 
 /* ========== Mobile Styles ========== */
-
 @media (max-width: 600px) {
   h1 {
     font-size: 24px;
@@ -102,11 +127,13 @@ section {
     text-align: center;
     font-family: Arial, sans-serif;
   }
-   #connect a {
-    color: darkgreen;
-    text-decoration: none; 
-   }
-  #connect a:hover {
-    text-decoration: underline;
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .connection-links {
+    flex-direction: column;
+    align-items: center;
   }
 }
