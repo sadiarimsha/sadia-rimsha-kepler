@@ -35,15 +35,6 @@ h1 {
   text-align: center;
 }
 
-#name {
-  font-size: 28px;
-  font-weight: bold;
-  color: #2c3e50;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 10px;
-}
-
 section {
   margin: 20px;
   padding: 20px;
@@ -94,11 +85,6 @@ section {
 
 /* ========== Tablet Styles ========== */
 @media (max-width: 1024px) {
-  #name {
-    font-size: 25px;
-    text-align: left;
-    font-family: Arial, sans-serif;
-  }
   section {
     padding: 18px;
     margin: 18px;
@@ -107,6 +93,10 @@ section {
   h1 {
     font-size: 32px;
     color: red;
+  }
+  nav ul {
+    gap: 15px;
+    padding: 12px;
   }
 }
 
@@ -121,11 +111,6 @@ section {
     padding: 12px;
     margin: 12px;
     background-color: #fff;
-  }
-  #name {
-    font-size: 20px;
-    text-align: center;
-    font-family: Arial, sans-serif;
   }
   nav ul {
     flex-direction: column;
