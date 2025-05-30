@@ -83,6 +83,21 @@ section {
   text-decoration: underline;
 }
 
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+#skills ul li {
+  background: pink;
+  color: grey;
+  padding: 8px;
+  border-radius: 5px;
+  font-weight: bold;
+}
 /* ========== Tablet Styles ========== */
 @media (max-width: 1024px) {
   section {
