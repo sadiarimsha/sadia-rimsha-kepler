@@ -7,6 +7,7 @@ let footerElement = document.querySelector("footer");
 let copyright = document.createElement("p");
 copyright.innerHTML = "© Sadia Rimsha " + thisYear;
 footerElement.appendChild(copyright);
+
 let skills = ["GitHub", "Jira", "Monday.com"];
 let skillsSection = document.getElementById("skills");
 let skillsList = skillsSection.querySelector("ul");
@@ -15,3 +16,35 @@ for (let i = 0; i < skills.length; i++) {
   skill.innerText = skills[i];
   skillsList.appendChild(skill);
 }
+
+let messageForm = document.querySelector('form[name="leave_message"]');
+
+messageForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  let nameInput = document.getElementById("usersName").value;
+  let emailInput = document.getElementById("usersEmail").value;
+  let messageInput = document.getElementById("usersMessage").value;
+
+  console.log(nameInput, emailInput, messageInput);
+
+  let messageSection = document.getElementById("messages");
+  let messageList = messageSection.querySelector("ul");
+
+  let newMessage = document.createElement("li");
+  newMessage.innerHTML = `<a href="mailto:${emailInput}">${nameInput}</a><span>: ${messageInput}</span>`;
+
+  let removeButton = document.createElement("button");
+  removeButton.innerText = "remove";
+  removeButton.type = "button";
+
+  removeButton.addEventListener("click", function () {
+    let entry = removeButton.parentNode;
+    entry.remove();
+  });
+
+  newMessage.appendChild(removeButton);
+  messageList.appendChild(newMessage);
+
+  messageForm.reset();
+});
