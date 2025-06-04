@@ -167,3 +167,17 @@ button:hover {
     font-size: 18px;
   }
 }
+#projects ul {
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+#projects ul li {
+  border-radius: 8px;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  padding: 7px 13px;
+}

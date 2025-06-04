@@ -48,3 +48,21 @@ messageForm.addEventListener("submit", function (event) {
 
   messageForm.reset();
 });
+fetch("https://api.github.com/users/sadiarimsha/repos")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (repositories) {
+    let projectSection = document.getElementById("projects");
+    let projectList = projectSection.querySelector("ul");
+
+    for (let i = 0; i < repositories.length; i++) {
+      let project = document.createElement("li");
+      project.innerText = repositories[i].name;
+      projectList.appendChild(project);
+    }
+    console.log(repositories);
+  })
+  .catch(function (error) {
+    console.log("Something went wrong. Could not fetch the projects.", error);
+  });
