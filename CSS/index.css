@@ -181,3 +181,64 @@ button:hover {
   background-color: #f0f0f0;
   padding: 7px 13px;
 }
+
+#quote-section {
+  background-color: #fff;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#quote-text {
+  font-style: italic;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+#quote-author {
+  font-weight: bold;
+  text-align: right;
+  font-size: 1.1rem;
+  color: #110e0e;
+}
+
+#new-quote-btn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#new-quote-btn:hover {
+  background-color: #007bff;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #quote-section {
+    margin: 10px;
+    padding: 12px;
+  }
+
+  #quote-text {
+    font-size: 1.2rem;
+  }
+
+  #quote-author {
+    font-size: 1rem;
+  }
+
+  #new-quote-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
