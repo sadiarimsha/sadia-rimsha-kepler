@@ -29,8 +29,6 @@ messageForm.addEventListener("submit", function (event) {
   let emailInput = document.getElementById("usersEmail").value;
   let messageInput = document.getElementById("usersMessage").value;
 
-  console.log(nameInput, emailInput, messageInput);
-
   let messageSection = document.getElementById("messages");
   let messageList = messageSection.querySelector("ul");
 
@@ -65,14 +63,11 @@ fetch("https://api.github.com/users/sadiarimsha/repos")
       li.innerText = repo.name;
       projectList.appendChild(li);
     });
-
-    console.log(repositories);
   })
   .catch((error) => {
     console.log("Something went wrong. Could not fetch the projects.", error);
   });
 
-// 🆕 Fetch and display weather
 function fetchWeather() {
   fetch(
     "https://api.open-meteo.com/v1/forecast?latitude=41.7859&longitude=-88.1473&hourly=temperature_2m&timezone=America%2FChicago"
@@ -89,7 +84,6 @@ function fetchWeather() {
       }
     })
     .catch((error) => {
-      console.error("Failed to fetch weather data:", error);
       const weatherInfo = document.getElementById("weather-info");
       if (weatherInfo) {
         weatherInfo.innerText = "Unable to load weather data.";
@@ -99,35 +93,14 @@ function fetchWeather() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const navProjects = document.getElementById("nav-projects");
-  const navQuotes = document.getElementById("nav-quotes");
+  const navWeather = document.getElementById("nav-weather");
 
   const projectsSection = document.getElementById("projects");
-  const quoteSection = document.getElementById("quote");
+  const weatherSection = document.getElementById("weather");
 
   function hideSections() {
     if (projectsSection) projectsSection.style.display = "none";
-    if (quoteSection) quoteSection.style.display = "none";
-  }
-
-  function fetchQuote() {
-    fetch(
-      "https://api.jsongpt.com/json?prompt=Generate%201%20motivational%20quotes%20&quotes=array%20of%20quotes"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        let quoteText = document.getElementById("quote-text");
-        if (quoteText && data.quotes && data.quotes.length > 0) {
-          quoteText.innerText = `${data.quotes[0]}`;
-        } else if (quoteText) {
-          quoteText.innerText = "Quote unavailable.";
-        }
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log("Could not fetch quote", error);
-        let quoteText = document.getElementById("quotes");
-        if (quoteText) quoteText.innerText = "Could not load quote.";
-      });
+    if (weatherSection) weatherSection.style.display = "none";
   }
 
   if (navProjects && projectsSection) {
@@ -138,12 +111,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (navQuotes && quoteSection) {
-    navQuotes.addEventListener("click", (e) => {
+  if (navWeather && weatherSection) {
+    navWeather.addEventListener("click", (e) => {
       e.preventDefault();
       hideSections();
-      quoteSection.style.display = "block";
-      fetchQuote();
+      weatherSection.style.display = "block";
+      fetchWeather();
     });
   }
 
