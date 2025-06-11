@@ -1,8 +1,9 @@
 # Sadia Rimsha – Kepler Portfolio
 
+
 Welcome to my personal portfolio website created for the Kepler class. It includes information about me, my experience, skills, GitHub projects, and a weather display using a public API.
 
-## 📁 Folder Structure
+##  Folder Structure
 
 sadia-rimsha-kepler/
 ├── index.html
@@ -12,7 +13,7 @@ sadia-rimsha-kepler/
 ├── js/
 │ └── index.js
 
-## 💡 Features
+##  Features
 
 - **About, Experience, and Skills** sections
 - **Projects** section showing my GitHub repositories using the GitHub API
@@ -21,7 +22,7 @@ sadia-rimsha-kepler/
 - Fully responsive design using media queries
 - Footer shows the current year and my name using JavaScript
 
-## 🔧 How to Run
+##  How to Run
 
 1. Download or clone this repository:
    git clone https://github.com/sadiarimsha/sadia-rimsha-kepler.git
@@ -30,12 +31,13 @@ sadia-rimsha-kepler/
 
 3. That’s it! You can now view the portfolio in your browser.
 
-## 🌐 APIs Used
+##  APIs Used
 
 - [GitHub API](https://docs.github.com/en/rest) – to fetch and display my repositories
 - [Open-Meteo API](https://open-meteo.com/) – to fetch current temperature data
 
-## 👩‍💻 Author
+##  Author
 
 **Sadia Rimsha**  
 Kepler Class
+

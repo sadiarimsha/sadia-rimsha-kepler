@@ -99,12 +99,15 @@ function fetchWeather() {
 
 // ===== Page Load Actions =====
 document.addEventListener("DOMContentLoaded", () => {
-  // Optional: Navigation toggles for Projects section
   const navProjects = document.getElementById("nav-projects");
+  const navWeather = document.getElementById("nav-weather");
+
   const projectsSection = document.getElementById("projects");
+  const weatherSection = document.getElementById("weather");
 
   function hideSections() {
     if (projectsSection) projectsSection.style.display = "none";
+    if (weatherSection) weatherSection.style.display = "none";
   }
 
   if (navProjects && projectsSection) {
@@ -112,6 +115,15 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       hideSections();
       projectsSection.style.display = "block";
+    });
+  }
+
+  if (navWeather && weatherSection) {
+    navWeather.addEventListener("click", (e) => {
+      e.preventDefault();
+      hideSections();
+      weatherSection.style.display = "block";
+      fetchWeather();
     });
   }
 
