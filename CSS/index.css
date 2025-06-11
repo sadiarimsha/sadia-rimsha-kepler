@@ -1,4 +1,4 @@
-/* ========== Desktop Styles ========== */
+/* General Styles */
 body {
   background-color: #f0f0f0;
   color: #333;
@@ -12,9 +12,10 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 15px;
 }
 
@@ -33,18 +34,22 @@ h1 {
   font-weight: bold;
   color: darkblue;
   text-align: center;
+  margin: 20px;
 }
 
 section {
   margin: 20px;
   padding: 20px;
-  border: 2px dashed;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  background-color: #fff;
 }
 
+/* Experience and Connect section layout using Flexbox */
 .experience {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .experience-item {
@@ -71,6 +76,7 @@ section {
 .connection-links {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .connection-links a {
@@ -83,10 +89,11 @@ section {
   text-decoration: underline;
 }
 
+/* Skills List styled with Flexbox */
 #skills ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 12px;
   padding: 0;
   list-style: none;
 }
@@ -94,151 +101,104 @@ section {
 #skills ul li {
   background: pink;
   color: grey;
-  padding: 8px;
+  padding: 8px 14px;
   border-radius: 5px;
   font-weight: bold;
 }
-/* ========== Tablet Styles ========== */
-@media (max-width: 1024px) {
-  section {
-    padding: 18px;
-    margin: 18px;
-    background-color: #fafafa;
-  }
-  h1 {
-    font-size: 32px;
-    color: red;
-  }
-  nav ul {
-    gap: 15px;
-    padding: 12px;
-  }
+
+/* Projects list styling */
+#projects ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
 }
 
-/* ========== Mobile Styles ========== */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 24px;
-    color: darkgreen;
-    text-align: left;
-  }
-  section {
-    padding: 12px;
-    margin: 12px;
-    background-color: #fff;
-  }
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  .connection-links {
-    flex-direction: column;
-    align-items: center;
-  }
+#projects ul li {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-weight: bold;
 }
 
+/* Messages styling */
+#messages ul {
+  list-style: none;
+  padding: 0;
+}
+
+#messages li {
+  margin-bottom: 10px;
+}
+
+/* Form elements */
 input,
 textarea,
 button {
   display: block;
   width: 100%;
   margin-bottom: 10px;
-  padding: 6px;
-  font-size: 17px;
+  padding: 8px;
+  font-size: 16px;
 }
 
 button {
   background-color: #000b16;
-  color: rgb(241, 229, 229);
+  color: #fff;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
 button:hover {
   background-color: #62a5ee;
 }
 
-@media (max-width: 600px) {
-  input,
-  textarea,
-  button {
-    padding: 12px;
-    font-size: 18px;
-  }
-}
-#projects ul {
-  flex-wrap: wrap;
-  gap: 12px;
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-}
-
-#projects ul li {
-  border-radius: 8px;
-  font-weight: bold;
-  background-color: #f0f0f0;
-  padding: 7px 13px;
-}
-
-#quote-section {
-  background-color: #fff;
-  border: 2px dashed #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 20px;
-  max-width: 600px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-#quote-text {
+/* Weather section styling */
+#weather-info {
+  font-size: 1.2rem;
   font-style: italic;
-  font-size: 1.4rem;
-  margin-bottom: 10px;
   color: #555;
 }
 
-#quote-author {
-  font-weight: bold;
-  text-align: right;
-  font-size: 1.1rem;
-  color: #110e0e;
+/* Media Query: Tablet */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 30px;
+    color: darkred;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  section {
+    padding: 15px;
+  }
 }
 
-#new-quote-btn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 6px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#new-quote-btn:hover {
-  background-color: #007bff;
-}
-
-/* Responsive tweaks */
+/* Media Query: Mobile */
 @media (max-width: 600px) {
-  #quote-section {
-    margin: 10px;
-    padding: 12px;
+  h1 {
+    font-size: 22px;
+    text-align: left;
   }
 
-  #quote-text {
-    font-size: 1.2rem;
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
 
-  #quote-author {
-    font-size: 1rem;
+  .connection-links {
+    flex-direction: column;
+    align-items: center;
   }
 
-  #new-quote-btn {
-    padding: 10px 20px;
-    font-size: 1rem;
+  input,
+  textarea,
+  button {
+    font-size: 18px;
+    padding: 10px;
   }
 }
