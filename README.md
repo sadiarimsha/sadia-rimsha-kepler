@@ -28,3 +28,7 @@ How to Run
 2. Open the folder and double-click the index.html file.
 
 3. That’s it! You can now view the portfolio in your browser.
+
+Related Projects
+
+- [Open API Luna Project](https://github.com/sadiarimsha/OpenAPILunaProject) – A project demonstrating use of a public API with multiple endpoints, displaying data on a webpage using HTML, CSS, and JavaScript.
