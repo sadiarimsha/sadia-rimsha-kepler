@@ -1,31 +1,35 @@
-// ===== Add copyright year to the footer =====
+// make footer and add it to the page
 const body = document.body;
 const footer = document.createElement("footer");
 body.appendChild(footer);
 
+// get current year
 const today = new Date();
 const thisYear = today.getFullYear();
 
+// put copyright in footer
 const copyright = document.createElement("p");
 copyright.innerHTML = `&copy; Sadia Rimsha ${thisYear}`;
 footer.appendChild(copyright);
 
-// ===== Add skills using JavaScript =====
+// make list of skills
 const skills = ["GitHub", "Jira", "Monday.com", "HTML", "CSS", "JavaScript"];
 const skillsSection = document.getElementById("skills");
 const skillsList = skillsSection.querySelector("ul");
 
+// add each skill to skills list
 skills.forEach((skill) => {
   const li = document.createElement("li");
   li.textContent = skill;
   skillsList.appendChild(li);
 });
 
-// ===== Handle the "Leave a Message" form =====
+// get the form
 const messageForm = document.forms["leave_message"];
 
+// when form is submitted do this
 messageForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+  event.preventDefault(); // stop page from reloading
 
   const name = event.target.usersName.value;
   const email = event.target.usersEmail.value;
@@ -34,13 +38,16 @@ messageForm.addEventListener("submit", function (event) {
   const messageSection = document.getElementById("messages");
   const messageList = messageSection.querySelector("ul");
 
+  // make new message and show name as email link
   const newMessage = document.createElement("li");
   newMessage.innerHTML = `<a href="mailto:${email}">${name}</a>: ${message}`;
 
+  // make remove button for message
   const removeButton = document.createElement("button");
   removeButton.textContent = "Remove";
   removeButton.type = "button";
 
+  // remove message when button clicked
   removeButton.addEventListener("click", () => {
     newMessage.remove();
   });
@@ -48,16 +55,18 @@ messageForm.addEventListener("submit", function (event) {
   newMessage.appendChild(removeButton);
   messageList.appendChild(newMessage);
 
+  // clear form fields
   messageForm.reset();
 });
 
-// ===== Fetch GitHub repositories and show them in Projects =====
+// get GitHub repos
 fetch("https://api.github.com/users/sadiarimsha/repos")
   .then((response) => response.json())
   .then((repos) => {
     const projectsSection = document.getElementById("projects");
     const projectList = projectsSection.querySelector("ul");
 
+    // add each repo as a link
     repos.forEach((repo) => {
       const li = document.createElement("li");
       const link = document.createElement("a");
@@ -73,33 +82,8 @@ fetch("https://api.github.com/users/sadiarimsha/repos")
     console.error("Error fetching GitHub repos:", error);
   });
 
-// ===== Fetch current weather temperature (°F) from Open-Meteo API =====
-function fetchWeather() {
-  fetch(
-    "https://api.open-meteo.com/v1/forecast?latitude=41.7859&longitude=-88.1473&hourly=temperature_2m&timezone=America%2FChicago"
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      const currentHour = new Date().getHours();
-      const celsius = data.hourly.temperature_2m[currentHour];
-      const fahrenheit = (celsius * 9) / 5 + 32;
-      const time = data.hourly.time[currentHour];
-
-      const weatherInfo = document.getElementById("weather-info");
-      weatherInfo.textContent = `Current Temperature (${time}): ${fahrenheit.toFixed(
-        1
-      )}°F`;
-    })
-    .catch((error) => {
-      const weatherInfo = document.getElementById("weather-info");
-      weatherInfo.textContent = "Unable to load weather data.";
-      console.error("Weather API error:", error);
-    });
-}
-
-// ===== Page Load Actions =====
+// show/hide sections and scroll when nav clicked
 document.addEventListener("DOMContentLoaded", () => {
-  // Optional: Navigation toggles for Projects section
   const navProjects = document.getElementById("nav-projects");
   const projectsSection = document.getElementById("projects");
 
@@ -107,14 +91,18 @@ document.addEventListener("DOMContentLoaded", () => {
     if (projectsSection) projectsSection.style.display = "none";
   }
 
+  // hide all sections at start
+  hideSections();
+
+  // when projects link clicked, show projects section and scroll to it
   if (navProjects && projectsSection) {
     navProjects.addEventListener("click", (e) => {
       e.preventDefault();
       hideSections();
       projectsSection.style.display = "block";
+
+      // scroll to the projects section smoothly
+      projectsSection.scrollIntoView({ behavior: "smooth" });
     });
   }
-
-  hideSections();
-  fetchWeather();
 });

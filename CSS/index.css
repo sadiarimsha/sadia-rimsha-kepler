@@ -124,12 +124,18 @@ section {
 
 /* Messages styling */
 #messages ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   list-style: none;
   padding: 0;
 }
 
 #messages li {
-  margin-bottom: 10px;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  flex: 1 1 200px;
 }
 
 /* Form elements */
@@ -155,14 +161,7 @@ button:hover {
   background-color: #62a5ee;
 }
 
-/* Weather section styling */
-#weather-info {
-  font-size: 1.2rem;
-  font-style: italic;
-  color: #555;
-}
-
-/* Media Query: Tablet */
+/* Tablet media query */
 @media (max-width: 1024px) {
   h1 {
     font-size: 30px;
@@ -171,10 +170,12 @@ button:hover {
 
   nav ul {
     gap: 15px;
+    justify-content: flex-start;
   }
 
   section {
     padding: 15px;
+    margin: 10px;
   }
 }
 
